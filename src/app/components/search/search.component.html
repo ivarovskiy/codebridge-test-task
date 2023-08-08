@@ -1,0 +1,18 @@
+<div class="search">
+  <span>Filter by keywords</span>
+
+  <mat-form-field class="example-form-field" appearance="outline">
+    <button matPreffix mat-icon-button aria-label="Search" (click)="value = ''">
+      <mat-icon class="searchIcon">search</mat-icon>
+    </button>
+    <input matInput type="text" [(ngModel)]="value" />
+    <button
+      *ngIf="value"
+      matSuffix
+      mat-icon-button
+      aria-label="Close"
+      (click)="value = ''">
+      <mat-icon class="searchIcon">close</mat-icon>
+    </button>
+  </mat-form-field>
+</div>

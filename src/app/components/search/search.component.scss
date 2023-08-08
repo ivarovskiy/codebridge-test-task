@@ -1,0 +1,25 @@
+.search {
+  display: flex;
+  flex-direction: column;
+
+  span {
+    margin-bottom: 10px;
+
+    font-weight: 600;
+    font-size: 16px;
+
+    color: rgba(54, 54, 54, 1);
+  }
+
+  .example-form-field {
+    min-height: 50px;
+    display: flex;
+    align-items: center;
+  }
+
+  .searchIcon {
+    font-size: 20px;
+    width: 20px;
+    height: 20px;
+  }
+}

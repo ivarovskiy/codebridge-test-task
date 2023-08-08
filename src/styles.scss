@@ -1,4 +1,58 @@
 /* You can add global styles to this file, and also import other style files */
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;500;700;900&display=swap');
 
-html, body { height: 100%; }
-body { margin: 0; font-family: Roboto, "Helvetica Neue", sans-serif; }
+html,
+body {
+  height: 100%;
+}
+body {
+  margin: 0;
+  font-family: Montserrat;
+  color: #363636;
+  box-sizing: border-box;
+}
+
+.highlight {
+  background-color: yellow;
+  font-weight: bold;
+}
+
+:root {
+  --main-text-color: #363636;
+
+  .mat-mdc {
+    &-text-field-wrapper {
+      padding: 0;
+
+      height: 50px;
+      display: flex;
+      align-items: center;
+    }
+
+    &-form-field-infix {
+      display: flex;
+
+      font-family: Montserrat;
+      color: rgba(87, 87, 87, 1);
+      font-weight: 400;
+      font-size: 16px;
+    }
+  }
+
+  .mdc-icon-button {
+    font-size: 0;
+    padding: 0;
+  }
+
+  .mat-mdc-icon-button {
+    height: var(--mdc-icon-button-state-layer-size, 50px);
+    width: var(--mdc-icon-button-state-layer-size, 60px);
+  }
+
+  .mat-mdc-icon-button .mat-mdc-button-touch-target {
+    width: 20px;
+    height: 20px;
+
+    padding: 15px 20px;
+  }
+}

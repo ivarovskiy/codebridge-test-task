@@ -1,0 +1,26 @@
+<div class="card">
+  <div class="imageWrapper">
+    <img class="image" [src]="article.image_url" alt="aboba" />
+  </div>
+  <div class="cardInfo">
+    <div class="upperBlock">
+      <div class="dateWrapper">
+        <img src="assets/icons/calendar-icon.svg" alt="icon calendar" />
+
+        <span>{{ article.published_at | customDate }}</span>
+      </div>
+      <div class="title">{{ article.title }}</div>
+    </div>
+
+    <div class="lowerBlock">
+      <div class="summary">
+        {{ article.summary | summaryTruncate: 100 }}
+      </div>
+      <div class="moreWrapper">
+        <span>Read more</span>
+
+        <img src="assets/icons/arrow-right-icon.svg" alt="icon arrow" />
+      </div>
+    </div>
+  </div>
+</div>
