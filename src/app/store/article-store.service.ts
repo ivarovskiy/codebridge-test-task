@@ -1,7 +1,7 @@
 import { Injectable } from '@angular/core';
 import { BehaviorSubject, Observable } from 'rxjs';
-import { IArticle } from '../models/article'; // Подставьте вашу модель статьи
-import { ArticleService } from './article.service'; // Подставьте ваш сервис для получения статей
+import { IArticle } from '../models/article';
+import { ArticleService } from '../services/article.service';
 
 @Injectable({
   providedIn: 'root',

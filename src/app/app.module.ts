@@ -7,7 +7,6 @@ import { AppComponent } from './app.component';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { SearchComponent } from './components/search/search.component';
 import { CardComponent } from './components/card/card.component';
-import { PaginationComponent } from './components/pagination/pagination.component';
 import { LoaderComponent } from './components/loader/loader.component';
 import { MatIconModule } from '@angular/material/icon';
 import { MatButtonModule } from '@angular/material/button';
@@ -20,7 +19,7 @@ import { CustomDatePipe } from './pipes/date/custom-date.pipe';
 import { SummaryTruncatePipe } from './pipes/summary/summary-truncate.pipe';
 import { HighlightSearchPipe } from './pipes/highlight-search/highlight-search.pipe';
 import { MatProgressSpinnerModule } from '@angular/material/progress-spinner';
-import { SearchWrapperComponent } from './containers/search-wrapper/search-wrapper/search-wrapper.component';
+import { SearchWrapperComponent } from './containers/search-wrapper/search-wrapper.component';
 import { MatPaginatorModule } from '@angular/material/paginator';
 
 @NgModule({
@@ -28,7 +27,6 @@ import { MatPaginatorModule } from '@angular/material/paginator';
     AppComponent,
     SearchComponent,
     CardComponent,
-    PaginationComponent,
     LoaderComponent,
     ArticleListComponent,
     CustomDatePipe,

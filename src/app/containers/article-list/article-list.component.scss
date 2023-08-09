@@ -1,7 +1,13 @@
 .wrapper {
-    display: grid;
-    grid-template-columns: repeat(auto-fill, minmax(400px, 1fr));
-    grid-column-gap: 45px;
-    grid-row-gap: 45px;
-  }
-  
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(400px, 1fr));
+  grid-column-gap: 45px;
+  grid-row-gap: 45px;
+}
+
+.footer {
+  margin-top: 45px;
+  padding-bottom: 45px;
+  display: flex;
+  justify-content: center;
+}

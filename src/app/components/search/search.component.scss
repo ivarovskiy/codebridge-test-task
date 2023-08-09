@@ -3,9 +3,11 @@
   flex-direction: column;
 
   .example-form-field {
-    min-height: 50px;
+    // min-height: 50px;
     display: flex;
     align-items: center;
+
+    width: 600px;
   }
 
   .searchIcon {

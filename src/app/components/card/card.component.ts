@@ -1,6 +1,6 @@
 import { Component, Input, OnInit } from '@angular/core';
 import { IArticle } from 'src/app/models/article';
-import { ArticleStoreService } from 'src/app/services/article-store.service';
+import { ArticleStoreService } from 'src/app/store/article-store.service';
 
 @Component({
   selector: 'app-card',

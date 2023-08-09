@@ -1,5 +1,19 @@
 <div class="wrapper">
-  <div *ngFor="let article of filteredArticles">
+  <div *ngFor="let article of articles">
     <app-card [article]="article"></app-card>
   </div>
+</div>
+
+<div class="footer">
+  <mat-paginator
+    #paginator
+    class="paginator"
+    [pageSizeOptions]="pageSizeOptions"
+    [length]="filteredArticles.length"
+    [pageIndex]="currentPage"
+    [pageSize]="pageSize"
+    [showFirstLastButtons]="true"
+    [hidePageSize]="true"
+    (page)="onPageChange($event)"
+    aria-label="Select page"></mat-paginator>
 </div>
