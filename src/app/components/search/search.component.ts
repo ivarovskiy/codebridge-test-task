@@ -1,5 +1,5 @@
 import { Component } from '@angular/core';
-import { SearchQuerryService } from 'src/app/services/search-querry.service';
+import { ArticleStoreService } from '../../services/article-store.service';
 
 @Component({
   selector: 'app-search',
@@ -7,12 +7,17 @@ import { SearchQuerryService } from 'src/app/services/search-querry.service';
   styleUrls: ['./search.component.scss'],
 })
 export class SearchComponent {
-  value = '';
   hide = true;
+  searchTerm = '';
 
-  constructor(private readonly searchQuerryService: SearchQuerryService) {}
+  constructor(private readonly articleStoreService: ArticleStoreService) {}
 
-  public onSearch(querry: string): void {
-    this.searchQuerryService.setQuerry(querry);
+  onSearch(querry: string) {
+    this.articleStoreService.updateFilter(querry);
+  }
+
+  clear() {
+    this.searchTerm = '';
+    this.onSearch(this.searchTerm);
   }
 }

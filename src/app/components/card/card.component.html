@@ -11,14 +11,14 @@
       </div>
       <div
         class="title"
-        [innerHTML]="article.title | highlightSearch: search"></div>
+        [innerHTML]="article.title | highlightSearch: searchTerm"></div>
     </div>
 
     <div class="lowerBlock">
       <div
         class="summary"
         [innerHTML]="
-          article.summary | summaryTruncate: 100 | highlightSearch: search
+          article.summary | summaryTruncate: 100 | highlightSearch: searchTerm
         "></div>
       <div class="moreWrapper">
         <span>Read more</span>

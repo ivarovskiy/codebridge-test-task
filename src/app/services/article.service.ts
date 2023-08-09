@@ -13,7 +13,7 @@ export class ArticleService {
   constructor(private http: HttpClient) {}
 
   getArticles(): Observable<IArticle[]> {
-    const params = new HttpParams().set('limit', '10');
+    const params = new HttpParams().set('limit', '100');
     return this.http.get<any>(this.apiUrl, { params }).pipe(
       map(response => response.results) // Вернуть только массив results
     );

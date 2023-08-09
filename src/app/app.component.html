@@ -1,6 +1,10 @@
-<div class="container">
-  <app-search></app-search>
+<div class="container" *ngIf="articlesLoaded; else loader">
+  <app-search-wrapper></app-search-wrapper>
   <div>
     <app-article-list></app-article-list>
   </div>
 </div>
+
+<ng-template #loader>
+  <app-loader></app-loader>
+</ng-template>

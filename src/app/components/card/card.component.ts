@@ -1,5 +1,6 @@
 import { Component, Input, OnInit } from '@angular/core';
 import { IArticle } from 'src/app/models/article';
+import { ArticleStoreService } from 'src/app/services/article-store.service';
 
 @Component({
   selector: 'app-card',
@@ -8,9 +9,9 @@ import { IArticle } from 'src/app/models/article';
 })
 export class CardComponent {
   @Input() article!: IArticle;
-  @Input() search: string;
+  searchTerm = '';
 
-  constructor() {
+  constructor(private articleStoreService: ArticleStoreService) {
     this.article = {
       id: 0,
       title: '',
@@ -20,6 +21,13 @@ export class CardComponent {
       summary: '',
       published_at: '',
     };
-    this.search = '';
+  }
+
+  ngOnInit(): void {
+    this.articleStoreService.filter$.subscribe(filter => this.log(filter));
+  }
+
+  public log(l: string) {
+    this.searchTerm = l;
   }
 }

@@ -19,6 +19,9 @@ import { ArticleListComponent } from './containers/article-list/article-list.com
 import { CustomDatePipe } from './pipes/date/custom-date.pipe';
 import { SummaryTruncatePipe } from './pipes/summary/summary-truncate.pipe';
 import { HighlightSearchPipe } from './pipes/highlight-search/highlight-search.pipe';
+import { MatProgressSpinnerModule } from '@angular/material/progress-spinner';
+import { SearchWrapperComponent } from './containers/search-wrapper/search-wrapper/search-wrapper.component';
+import { MatPaginatorModule } from '@angular/material/paginator';
 
 @NgModule({
   declarations: [
@@ -31,6 +34,7 @@ import { HighlightSearchPipe } from './pipes/highlight-search/highlight-search.p
     CustomDatePipe,
     SummaryTruncatePipe,
     HighlightSearchPipe,
+    SearchWrapperComponent,
   ],
   imports: [
     BrowserModule,
@@ -43,6 +47,8 @@ import { HighlightSearchPipe } from './pipes/highlight-search/highlight-search.p
     NgIf,
     FormsModule,
     HttpClientModule,
+    MatProgressSpinnerModule,
+    MatPaginatorModule,
   ],
   providers: [],
   bootstrap: [AppComponent],
