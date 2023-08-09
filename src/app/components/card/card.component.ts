@@ -1,5 +1,5 @@
-import { Component, Input } from '@angular/core';
-import { ArticleI } from 'src/app/models/article';
+import { Component, Input, OnInit } from '@angular/core';
+import { IArticle } from 'src/app/models/article';
 
 @Component({
   selector: 'app-card',
@@ -7,7 +7,8 @@ import { ArticleI } from 'src/app/models/article';
   styleUrls: ['./card.component.scss'],
 })
 export class CardComponent {
-  @Input() article!: ArticleI; // Обратите внимание на '!' здесь
+  @Input() article!: IArticle;
+  @Input() search: string;
 
   constructor() {
     this.article = {
@@ -19,5 +20,6 @@ export class CardComponent {
       summary: '',
       published_at: '',
     };
+    this.search = '';
   }
 }

@@ -9,13 +9,17 @@
 
         <span>{{ article.published_at | customDate }}</span>
       </div>
-      <div class="title">{{ article.title }}</div>
+      <div
+        class="title"
+        [innerHTML]="article.title | highlightSearch: search"></div>
     </div>
 
     <div class="lowerBlock">
-      <div class="summary">
-        {{ article.summary | summaryTruncate: 100 }}
-      </div>
+      <div
+        class="summary"
+        [innerHTML]="
+          article.summary | summaryTruncate: 100 | highlightSearch: search
+        "></div>
       <div class="moreWrapper">
         <span>Read more</span>
 
