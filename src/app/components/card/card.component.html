@@ -1,0 +1,35 @@
+<div class="card">
+  <div class="imageWrapper">
+    <img class="image" [src]="article.image_url" alt="aboba" />
+  </div>
+  <div class="cardInfo">
+    <div class="upperBlock">
+      <div class="dateWrapper">
+        <img src="assets/icons/calendar-icon.svg" alt="icon calendar" />
+
+        <span>{{ article.published_at | customDate }}</span>
+      </div>
+      <div
+        class="title"
+        [innerHTML]="article.title | highlightSearch: searchTerm"></div>
+    </div>
+
+    <div class="lowerBlock">
+      <div
+        class="summary"
+        [innerHTML]="
+          article.summary | summaryTruncate: 100 | highlightSearch: searchTerm
+        "></div>
+      <div class="moreWrapper">
+        <span>Read more</span>
+
+        <button
+          mat-icon-button
+          aria-label="Example icon button with a heart icon"
+          (click)="openArticle()">
+          <mat-icon>arrow_forward</mat-icon>
+        </button>
+      </div>
+    </div>
+  </div>
+</div>

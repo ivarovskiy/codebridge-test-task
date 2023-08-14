@@ -1,0 +1,17 @@
+.search {
+  display: flex;
+  flex-direction: column;
+
+  .example-form-field {
+    display: flex;
+    align-items: center;
+
+    width: 600px;
+  }
+
+  .searchIcon {
+    font-size: 20px;
+    width: 20px;
+    height: 20px;
+  }
+}

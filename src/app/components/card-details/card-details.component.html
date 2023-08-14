@@ -1,0 +1,22 @@
+<div *ngIf="article" class="detailsWrapper">
+  <div class="detailsHeader">
+    <img [src]="article.image_url" alt="article image" class="detailsimage" />
+  </div>
+  <div class="detailsContent">
+    <div class="detailsTitle">
+      {{ article.title }}
+    </div>
+    <div class="detailsText">
+      {{ article.summary }}
+    </div>
+  </div>
+  <div class="detailsFooter">
+    <button
+      mat-icon-button
+      aria-label="Example icon button with a heart icon"
+      (click)="goHome()">
+      <mat-icon>arrow_back</mat-icon>
+    </button>
+    <span>Back to homepage</span>
+  </div>
+</div>

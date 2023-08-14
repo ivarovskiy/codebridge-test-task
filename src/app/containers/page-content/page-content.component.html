@@ -1,0 +1,10 @@
+<div class="container" *ngIf="articlesLoaded; else loader">
+  <app-search-wrapper></app-search-wrapper>
+  <div>
+    <app-card-list></app-card-list>
+  </div>
+</div>
+
+<ng-template #loader>
+  <app-loader></app-loader>
+</ng-template>
