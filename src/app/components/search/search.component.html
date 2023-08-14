@@ -8,12 +8,7 @@
       <mat-icon class="searchIcon">search</mat-icon>
     </button>
     <input matInput type="text" [(ngModel)]="searchTerm" />
-    <button
-      *ngIf="searchTerm"
-      matSuffix
-      mat-icon-button
-      aria-label="Close"
-      (click)="clear()">
+    <button matSuffix mat-icon-button aria-label="Close" (click)="clear()">
       <mat-icon class="searchIcon">close</mat-icon>
     </button>
   </mat-form-field>

@@ -14,13 +14,15 @@ import { NgIf } from '@angular/common';
 import { FormsModule } from '@angular/forms';
 import { MatInputModule } from '@angular/material/input';
 import { HttpClientModule } from '@angular/common/http';
-import { ArticleListComponent } from './containers/article-list/article-list.component';
+import { CardListComponent } from './containers/card-list/card-list.component';
 import { CustomDatePipe } from './pipes/date/custom-date.pipe';
 import { SummaryTruncatePipe } from './pipes/summary/summary-truncate.pipe';
 import { HighlightSearchPipe } from './pipes/highlight-search/highlight-search.pipe';
 import { MatProgressSpinnerModule } from '@angular/material/progress-spinner';
 import { SearchWrapperComponent } from './containers/search-wrapper/search-wrapper.component';
 import { MatPaginatorModule } from '@angular/material/paginator';
+import { CardDetailsComponent } from './components/card-details/card-details.component';
+import { PageContentComponent } from './containers/page-content/page-content.component';
 
 @NgModule({
   declarations: [
@@ -28,11 +30,13 @@ import { MatPaginatorModule } from '@angular/material/paginator';
     SearchComponent,
     CardComponent,
     LoaderComponent,
-    ArticleListComponent,
+    CardListComponent,
     CustomDatePipe,
     SummaryTruncatePipe,
     HighlightSearchPipe,
     SearchWrapperComponent,
+    CardDetailsComponent,
+    PageContentComponent,
   ],
   imports: [
     BrowserModule,

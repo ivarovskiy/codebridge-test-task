@@ -5,14 +5,13 @@ import { combineLatest } from 'rxjs';
 import { map } from 'rxjs/operators';
 import { MatPaginator, PageEvent } from '@angular/material/paginator';
 import { ViewChild } from '@angular/core';
-// import { PaginatorComponent } from '../../components/paginator/paginator.component';
 
 @Component({
-  selector: 'app-article-list',
-  templateUrl: './article-list.component.html',
-  styleUrls: ['./article-list.component.scss'],
+  selector: 'app-card-list',
+  templateUrl: './card-list.component.html',
+  styleUrls: ['./card-list.component.scss'],
 })
-export class ArticleListComponent implements OnInit {
+export class CardListComponent implements OnInit {
   @ViewChild(MatPaginator) paginator!: MatPaginator;
 
   articles: IArticle[] = [];
@@ -25,7 +24,6 @@ export class ArticleListComponent implements OnInit {
   constructor(private articleStoreService: ArticleStoreService) {}
 
   ngOnInit(): void {
-    console.log('reload');
     this.articleStoreService.loadArticles();
 
     combineLatest([
@@ -33,14 +31,26 @@ export class ArticleListComponent implements OnInit {
       this.articleStoreService.filter$,
     ])
       .pipe(
-        map(([articles, filter]) =>
-          articles.filter(article =>
-            article.title.toLowerCase().includes(filter.toLowerCase())
-          )
-        )
+        map(([articles, filter]) => {
+          const priorityArticles: IArticle[] = [];
+          const nonPriorityArticles: IArticle[] = [];
+
+          articles.forEach(article => {
+            if (article.title.toLowerCase().includes(filter.toLowerCase())) {
+              priorityArticles.push(article);
+            } else if (
+              article.summary.toLowerCase().includes(filter.toLowerCase())
+            ) {
+              nonPriorityArticles.push(article);
+            }
+          });
+
+          return priorityArticles.concat(nonPriorityArticles);
+        })
       )
       .subscribe(filteredArticles => {
         this.filteredArticles = filteredArticles;
+
         this.currentPage = 0;
         this.updateDisplayedArticles();
       });

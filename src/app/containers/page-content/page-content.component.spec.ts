@@ -1,17 +1,17 @@
 import { ComponentFixture, TestBed } from '@angular/core/testing';
 
-import { SearchWrapperComponent } from './search-wrapper.component';
+import { PageContentComponent } from './page-content.component';
 
-describe('SearchWrapperComponent', () => {
-  let component: SearchWrapperComponent;
-  let fixture: ComponentFixture<SearchWrapperComponent>;
+describe('PageContentComponent', () => {
+  let component: PageContentComponent;
+  let fixture: ComponentFixture<PageContentComponent>;
 
   beforeEach(async () => {
     await TestBed.configureTestingModule({
-      declarations: [SearchWrapperComponent],
+      declarations: [PageContentComponent],
     }).compileComponents();
 
-    fixture = TestBed.createComponent(SearchWrapperComponent);
+    fixture = TestBed.createComponent(PageContentComponent);
     component = fixture.componentInstance;
     fixture.detectChanges();
   });

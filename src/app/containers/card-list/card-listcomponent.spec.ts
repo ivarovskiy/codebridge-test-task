@@ -1,17 +1,17 @@
 import { ComponentFixture, TestBed } from '@angular/core/testing';
 
-import { SearchWrapperComponent } from './search-wrapper.component';
+import { CardListComponent } from './card-list.component';
 
-describe('SearchWrapperComponent', () => {
-  let component: SearchWrapperComponent;
-  let fixture: ComponentFixture<SearchWrapperComponent>;
+describe('ArticleListComponent', () => {
+  let component: CardListComponent;
+  let fixture: ComponentFixture<CardListComponent>;
 
   beforeEach(async () => {
     await TestBed.configureTestingModule({
-      declarations: [SearchWrapperComponent],
+      declarations: [CardListComponent],
     }).compileComponents();
 
-    fixture = TestBed.createComponent(SearchWrapperComponent);
+    fixture = TestBed.createComponent(CardListComponent);
     component = fixture.componentInstance;
     fixture.detectChanges();
   });

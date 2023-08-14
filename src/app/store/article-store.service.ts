@@ -19,7 +19,6 @@ export class ArticleStoreService {
     this.articleService.getArticles().subscribe(
       articles => {
         this.articlesSubject.next(articles);
-        console.log(articles);
       },
       error => {
         console.error('Error fetching articles:', error);
@@ -29,5 +28,10 @@ export class ArticleStoreService {
 
   updateFilter(filter: string) {
     this.filterSubject.next(filter);
+  }
+
+  getArticleById(articleId: number): IArticle | undefined {
+    const articles = this.articlesSubject.value;
+    return articles.find(article => article.id === articleId);
   }
 }
